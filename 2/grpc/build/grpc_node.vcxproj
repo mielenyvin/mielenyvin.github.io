@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{7B84BBCB-3AE7-E3CB-D74B-C2AF5753EE22}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>grpc_node</RootNamespace>
+    <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props"/>
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Label="Locals">
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props"/>
+  <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props"/>
+  <ImportGroup Label="ExtensionSettings"/>
+  <ImportGroup Label="PropertySheets">
+    <Import Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props"/>
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros"/>
+  <PropertyGroup>
+    <ExecutablePath>$(ExecutablePath);$(MSBuildProjectDirectory)\..\bin\;$(MSBuildProjectDirectory)\..\bin\</ExecutablePath>
+    <IgnoreImportLibrary>true</IgnoreImportLibrary>
+    <IntDir>$(Configuration)\obj\$(ProjectName)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.node</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.node</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.node</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.node</TargetExt>
+    <TargetName>$(ProjectName)</TargetName>
+    <TargetPath>$(OutDir)\$(ProjectName).node</TargetPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\deps\grpc;..\deps\grpc\include;..\deps\grpc\third_party\abseil-cpp;C:\Users\DK\AppData\Local\node-gyp\Cache\14.17.5\include\node;C:\Users\DK\AppData\Local\node-gyp\Cache\14.17.5\src;C:\Users\DK\AppData\Local\node-gyp\Cache\14.17.5\deps\openssl\config;C:\Users\DK\AppData\Local\node-gyp\Cache\14.17.5\deps\openssl\openssl\include;C:\Users\DK\AppData\Local\node-gyp\Cache\14.17.5\deps\uv\include;C:\Users\DK\AppData\Local\node-gyp\Cache\14.17.5\deps\zlib;C:\Users\DK\AppData\Local\node-gyp\Cache\14.17.5\deps\v8\include;..\deps\grpc\third_party\boringssl\include;..\deps\grpc\third_party\zlib;..\deps\grpc\third_party\cares\cares;..\..\nan;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <DisableSpecificWarnings>4351;4355;4800;4251;4275;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>false</ExceptionHandling>
+      <MinimalRebuild>false</MinimalRebuild>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <OmitFramePointers>false</OmitFramePointers>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PreprocessorDefinitions>GPR_BACKWARDS_COMPATIBILITY_MODE;GRPC_ARES=0;GRPC_UV;NODE_GYP_MODULE_NAME=grpc_node;USING_UV_SHARED=1;USING_V8_SHARED=1;V8_DEPRECATION_WARNINGS=1;V8_DEPRECATION_WARNINGS;V8_IMMINENT_DEPRECATION_WARNINGS;OPENSSL_NO_ASM;_WIN32_WINNT=0x0600;WIN32_LEAN_AND_MEAN;_HAS_EXCEPTIONS=0;UNICODE;_UNICODE;NOMINMAX;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;OPENSSL_NO_PINSHARED;OPENSSL_THREADS;BUILDING_NODE_EXTENSION;HOST_BINARY=&quot;node.exe&quot;;_DEBUG;DEBUG;V8_ENABLE_CHECKS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <StringPooling>true</StringPooling>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;DelayImp.lib;&quot;C:\\Users\\DK\\AppData\\Local\\node-gyp\\Cache\\14.17.5\\x64\\node.lib&quot;</AdditionalDependencies>
+      <AdditionalOptions>/ignore:4199 %(AdditionalOptions)</AdditionalOptions>
+      <DelayLoadDLLs>node.exe;%(DelayLoadDLLs)</DelayLoadDLLs>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <OutputFile>$(OutDir)$(ProjectName).node</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetExt>.node</TargetExt>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>..\deps\grpc;..\deps\grpc\include;..\deps\grpc\third_party\abseil-cpp;C:\Users\DK\AppData\Local\node-gyp\Cache\14.17.5\include\node;C:\Users\DK\AppData\Local\node-gyp\Cache\14.17.5\src;C:\Users\DK\AppData\Local\node-gyp\Cache\14.17.5\deps\openssl\config;C:\Users\DK\AppData\Local\node-gyp\Cache\14.17.5\deps\openssl\openssl\include;C:\Users\DK\AppData\Local\node-gyp\Cache\14.17.5\deps\uv\include;C:\Users\DK\AppData\Local\node-gyp\Cache\14.17.5\deps\zlib;C:\Users\DK\AppData\Local\node-gyp\Cache\14.17.5\deps\v8\include;..\deps\grpc\third_party\boringssl\include;..\deps\grpc\third_party\zlib;..\deps\grpc\third_party\cares\cares;..\..\nan;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>GPR_BACKWARDS_COMPATIBILITY_MODE;GRPC_ARES=0;GRPC_UV;NODE_GYP_MODULE_NAME=grpc_node;USING_UV_SHARED=1;USING_V8_SHARED=1;V8_DEPRECATION_WARNINGS=1;V8_DEPRECATION_WARNINGS;V8_IMMINENT_DEPRECATION_WARNINGS;OPENSSL_NO_ASM;_WIN32_WINNT=0x0600;WIN32_LEAN_AND_MEAN;_HAS_EXCEPTIONS=0;UNICODE;_UNICODE;NOMINMAX;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;OPENSSL_NO_PINSHARED;OPENSSL_THREADS;BUILDING_NODE_EXTENSION;HOST_BINARY=&quot;node.exe&quot;;_DEBUG;DEBUG;V8_ENABLE_CHECKS;%(PreprocessorDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\deps\grpc;..\deps\grpc\include;..\deps\grpc\third_party\abseil-cpp;C:\Users\DK\AppData\Local\node-gyp\Cache\14.17.5\include\node;C:\Users\DK\AppData\Local\node-gyp\Cache\14.17.5\src;C:\Users\DK\AppData\Local\node-gyp\Cache\14.17.5\deps\openssl\config;C:\Users\DK\AppData\Local\node-gyp\Cache\14.17.5\deps\openssl\openssl\include;C:\Users\DK\AppData\Local\node-gyp\Cache\14.17.5\deps\uv\include;C:\Users\DK\AppData\Local\node-gyp\Cache\14.17.5\deps\zlib;C:\Users\DK\AppData\Local\node-gyp\Cache\14.17.5\deps\v8\include;..\deps\grpc\third_party\boringssl\include;..\deps\grpc\third_party\zlib;..\deps\grpc\third_party\cares\cares;..\..\nan;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <DisableSpecificWarnings>4351;4355;4800;4251;4275;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>false</ExceptionHandling>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <OmitFramePointers>true</OmitFramePointers>
+      <Optimization>Full</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PreprocessorDefinitions>GPR_BACKWARDS_COMPATIBILITY_MODE;GRPC_ARES=0;GRPC_UV;NODE_GYP_MODULE_NAME=grpc_node;USING_UV_SHARED=1;USING_V8_SHARED=1;V8_DEPRECATION_WARNINGS=1;V8_DEPRECATION_WARNINGS;V8_IMMINENT_DEPRECATION_WARNINGS;OPENSSL_NO_ASM;_WIN32_WINNT=0x0600;WIN32_LEAN_AND_MEAN;_HAS_EXCEPTIONS=0;UNICODE;_UNICODE;NOMINMAX;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;OPENSSL_NO_PINSHARED;OPENSSL_THREADS;BUILDING_NODE_EXTENSION;HOST_BINARY=&quot;node.exe&quot;;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <StringPooling>true</StringPooling>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;DelayImp.lib;&quot;C:\\Users\\DK\\AppData\\Local\\node-gyp\\Cache\\14.17.5\\x64\\node.lib&quot;</AdditionalDependencies>
+      <AdditionalOptions>/ignore:4199 %(AdditionalOptions)</AdditionalOptions>
+      <DelayLoadDLLs>node.exe;%(DelayLoadDLLs)</DelayLoadDLLs>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <OutputFile>$(OutDir)$(ProjectName).node</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetExt>.node</TargetExt>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>..\deps\grpc;..\deps\grpc\include;..\deps\grpc\third_party\abseil-cpp;C:\Users\DK\AppData\Local\node-gyp\Cache\14.17.5\include\node;C:\Users\DK\AppData\Local\node-gyp\Cache\14.17.5\src;C:\Users\DK\AppData\Local\node-gyp\Cache\14.17.5\deps\openssl\config;C:\Users\DK\AppData\Local\node-gyp\Cache\14.17.5\deps\openssl\openssl\include;C:\Users\DK\AppData\Local\node-gyp\Cache\14.17.5\deps\uv\include;C:\Users\DK\AppData\Local\node-gyp\Cache\14.17.5\deps\zlib;C:\Users\DK\AppData\Local\node-gyp\Cache\14.17.5\deps\v8\include;..\deps\grpc\third_party\boringssl\include;..\deps\grpc\third_party\zlib;..\deps\grpc\third_party\cares\cares;..\..\nan;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>GPR_BACKWARDS_COMPATIBILITY_MODE;GRPC_ARES=0;GRPC_UV;NODE_GYP_MODULE_NAME=grpc_node;USING_UV_SHARED=1;USING_V8_SHARED=1;V8_DEPRECATION_WARNINGS=1;V8_DEPRECATION_WARNINGS;V8_IMMINENT_DEPRECATION_WARNINGS;OPENSSL_NO_ASM;_WIN32_WINNT=0x0600;WIN32_LEAN_AND_MEAN;_HAS_EXCEPTIONS=0;UNICODE;_UNICODE;NOMINMAX;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;OPENSSL_NO_PINSHARED;OPENSSL_THREADS;BUILDING_NODE_EXTENSION;HOST_BINARY=&quot;node.exe&quot;;NDEBUG;%(PreprocessorDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="..\binding.gyp"/>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\ext\byte_buffer.h"/>
+    <ClInclude Include="..\ext\call.h"/>
+    <ClInclude Include="..\ext\call_credentials.h"/>
+    <ClInclude Include="..\ext\channel.h"/>
+    <ClInclude Include="..\ext\channel_credentials.h"/>
+    <ClInclude Include="..\ext\completion_queue.h"/>
+    <ClInclude Include="..\ext\server.h"/>
+    <ClInclude Include="..\ext\server_credentials.h"/>
+    <ClInclude Include="..\ext\slice.h"/>
+    <ClInclude Include="..\ext\timeval.h"/>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\ext\byte_buffer.cc"/>
+    <ClCompile Include="..\ext\call.cc"/>
+    <ClCompile Include="..\ext\call_credentials.cc"/>
+    <ClCompile Include="..\ext\channel.cc"/>
+    <ClCompile Include="..\ext\channel_credentials.cc"/>
+    <ClCompile Include="..\ext\completion_queue.cc"/>
+    <ClCompile Include="..\ext\node_grpc.cc"/>
+    <ClCompile Include="..\ext\server.cc"/>
+    <ClCompile Include="..\ext\server_credentials.cc"/>
+    <ClCompile Include="..\ext\slice.cc"/>
+    <ClCompile Include="..\ext\timeval.cc"/>
+    <ClCompile Include="C:\Program Files\nodejs\node_modules\npm\node_modules\node-gyp\src\win_delay_load_hook.cc"/>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="grpc.vcxproj">
+      <Project>{661A4A0B-44B2-DFDE-3A82-A3256A5618FF}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="gpr.vcxproj">
+      <Project>{233D5138-CB95-068F-B54F-06FD3B2DA2F1}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="boringssl.vcxproj">
+      <Project>{28CF7C6E-B2FF-B4CA-6F50-73574D03F5F4}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="z.vcxproj">
+      <Project>{6EB86D9C-E198-ED2E-1C4C-D199A64102B9}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets"/>
+  <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets"/>
+  <ImportGroup Label="ExtensionTargets"/>
+</Project>
