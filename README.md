@@ -8,7 +8,7 @@
 ## Install dependencies
 npm install
 
-## Serve on localhost:8080
+## Serve on https://mielenyvin.github.io/
 npm run dev
 
 ## Build for production with minification
