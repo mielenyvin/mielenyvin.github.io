@@ -2,7 +2,7 @@
   <nav>
       <div class="nav-wrapper green">
         <div class="container">
-          <router-link to="/" class="brand-logo">Employee Manager</router-link>    
+          <router-link to="/" class="brand-logo">Fleet Manager</router-link>    
           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
             <li v-if="isLoggedIn"><span class="email black-text">{{currentUser}}</span></li>
