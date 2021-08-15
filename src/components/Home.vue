@@ -1,7 +1,7 @@
 <template>
   <div id="home">
     <ul class="collection with-header">
-      <li class="collection-header"><h4>Employees</h4></li>
+      <li class="collection-header"><h4>Trucks</h4></li>
       <li v-for="employee in employees" v-bind:key="employee.id" class="collection-item">
         <div class="chip">{{employee.dept}}</div>
         {{employee.employee_id}}: {{employee.name}} 
